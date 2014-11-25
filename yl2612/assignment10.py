@@ -1,9 +1,16 @@
-from functions import *
+from get_improvement import *
+from data_cleaning import *
+from graphs import *
+import pandas as pd
+import numpy as np
 
 
 def main():
     '''
     Main program that generates answers for assginment 10.
+    Read the data, clean the data, calculate the sum of restarurant improvements in NYC and boroughs.
+    Plot the number of 3 grades in NYC and boroughs over time.
+    Create a bar plot for the number of restaurants in different cuisines.
     '''
     
     #Q2:
