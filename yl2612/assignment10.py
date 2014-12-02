@@ -1,5 +1,6 @@
-from get_improvement import *
 from data_cleaning import *
+from exception import *
+from get_improvement import *
 from graphs import *
 import pandas as pd
 import numpy as np
@@ -13,8 +14,13 @@ def main():
     Create a bar plot for the number of restaurants in different cuisines.
     '''
     
-    #Q2:
-    results = pd.read_csv('DOHMH_New_York_City_Restaurant_Inspection_Results.csv') #import the dataset into a data frame called results
+    #try to read the data, raise exception if there is error in readin the file.
+    try:
+        results = pd.read_csv('DOHMH_New_York_City_Restaurant_Inspection_Results.csv') #import the dataset into a data frame called results
+    except:
+        raise ReadResultsFailed("Fail to read the file.")
+    
+    #Q2:clean the data
     cleaned_data = clean_data_q2(results)
 
 
